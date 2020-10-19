@@ -41,20 +41,10 @@ v = va * fcc2_BCCvariants;
 % 'plot' function in the output of 'v' will plot the orientations in the Euler space
 % by default. 
 
-% plot on a pole figure
-% Plot the first
-% variant only
-% plotPDF(va, Miller({0,0,1},v.CS), 'MarkerSize',4, 'color','r') 
-
 %plot all variants
 figure
+% this plots the fcc orientation
 % plotPDF(fcc_ori, Miller({0,0,1},cs_fcc), 'MarkerSize',4, 'silent')
 plotPDF(bcc_ori_2, Miller({0,0,1},cs_bcc), 'MarkerSize',6, 'silent')
 hold on
 plotPDF(v, Miller({0,0,1},v.CS), 'MarkerSize',6, 'silent')
-
-%% backup code for misorientation analysis
-
-% anglz_fcc2_BCCvariants = angle(fcc2_BCCvariants)./degree
-% axz_fcc2_BCCvariants = axis(fcc2_BCCvariants);
-% [axz_fcc2_BCCvariants.h axz_fcc2_BCCvariants.k axz_fcc2_BCCvariants.l]
