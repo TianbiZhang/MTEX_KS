@@ -7,7 +7,9 @@
 % With reference from https://github.com/mtex-toolbox/mtex/issues/251
 % mtex toolbox must be installed!
 
-%--- Define the crystal symmetry of the various phases (Note: Phase ID should match the CTF file)
+ run('C:\Users\billy\Documents\MATLAB\mtex-5.10.0\startup.m');
+
+%--- Define the crystal symmetry of the various phases (Note: Phase ID should match the CIF file)
 cs_fcc = crystalSymmetry('m-3m', [3.6599 3.6599 3.6599], 'mineral', 'fcc');
 cs_bcc = crystalSymmetry('m-3m', [2.866 2.866 2.866], 'mineral', 'bcc');
 
@@ -26,6 +28,8 @@ fcc2bcc = orientation('map',...
 % use Miller indices, Euler Angle (Bunge), etc. as you want.
 % fcc_ori = orientation.byMiller([1 2 3],[1 1 1],cs_fcc, ss) %{hkl}[uvw]
 % convention
+
+% For the purpose of plotting, the Euler angles are probably from OIM, etc.
 fcc_ori = orientation.byEuler(0*degree, 0*degree, 90*degree, cs_fcc)
 bcc_ori_2 = orientation.byEuler(0*degree, 0*degree, 90*degree, cs_bcc)
 % fcc_ori = orientation.byMiller([0 1 1],[1 0 0], cs_fcc)
